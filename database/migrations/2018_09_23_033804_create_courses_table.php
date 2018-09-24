@@ -16,11 +16,11 @@ class CreateCoursesTable extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('teacher_id');
+            $table->unsignedInteger('teacher_id');
             $table->foreign('teacher_id')->references('id')->on('teachers');
-            $table->string('category_id');
+            $table->unsignedInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
-            $table->string('level_id');
+            $table->unsignedInteger('level_id');
             $table->foreign('level_id')->references('id')->on('levels');
 
             $table->string('name');
