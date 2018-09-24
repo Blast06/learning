@@ -50,5 +50,14 @@ class DatabaseSeeder extends Seeder
         factory(\App\Level::class,1)->create(['name' => ' Intermediate']);
         factory(\App\Level::class,1)->create(['name' => ' Advanced']);
         factory(\App\Category::class,5)->create();
+
+        //Crea 50 cursos, y a cada curso, creale dos goals y 4 requisitos
+        factory(\App\Course::class,50)
+            ->create()
+            ->each(function (\App\Course $c){
+                $c->goals()->saveMany(factory(\App\Goal::class,2)->create());
+                $c->requirements()->saveMany(factory(\App\Requirement::class,4)->create());
+
+            });
     }
 }
