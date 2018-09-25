@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Student extends Model
 {
+    protected $fillable = ['user_id', 'title'];
     public function courses(){
         return $this->belongsToMany(Course::class);
     }
