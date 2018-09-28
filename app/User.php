@@ -44,6 +44,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    //Aqui verifica el role del usuario en caso de estar logueado, sino, sera guest.
+    // para despues saber cual vista mostrar
+    public static function navigation(){
+        return auth()->check() ? auth()->user()->role->name : 'guest';
+    }
 
     public function role(){
         return $this->belongsTo(Role::class);

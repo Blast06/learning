@@ -26,6 +26,7 @@
 <body>
 
 @include('partials.navigation')
+@yield('jumbotron')
 <div id="app">
 
     <main class="py-4">
