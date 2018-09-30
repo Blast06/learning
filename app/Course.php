@@ -15,6 +15,28 @@ class Course extends Model
     const PENDING   = 2;
     const REJECTED  = 3;
 
+    //esto es para que se pueda usar el slug en la url, asi como se usa  el id
+//    public function getRouteKeyName()
+//    {
+//     return 'slug';
+//    }
+
+    /**
+     * @return mixed
+     */
+    public function relatedCourses(){
+        //retornar un curso con los reviews y que tambien retorne cursos en la misma categoria
+        //que el curso que el usuario esta viendo.
+        return Course::with('reviews')->whereCategoryId($this->category->id)
+            ->where('id', '!=' ,$this->id)
+            ->latest()
+            ->limit(6)
+            ->get();
+
+    }
+
+    protected $withCount = ['reviews', 'students'];
+
     public function getRatingAttribute(){
         return $this->reviews()->avg('rating');
 }

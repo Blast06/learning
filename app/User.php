@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\App;
+use Laravel\Cashier\Billable;
 
 /**
  * App\User
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\App;
  */
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, Billable;
 
     protected static function boot()
     {
