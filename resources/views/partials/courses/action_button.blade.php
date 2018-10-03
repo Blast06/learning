@@ -4,7 +4,7 @@
         @can('opt_for_course', $course)
             {{--el usuario se puede suscribir a la plataforma porque no tiene ningun plan contratado--}}
             @can('subscribe', \App\Course::class)
-                <a href="" class="btn btn-subscribe btn-bottom btn-block">
+                <a href="{{ route('subscriptions.plans') }}" class="btn btn-subscribe btn-bottom btn-block">
                     <i class="fa fa-bolt"></i> {{ __("Suscribirme") }}
                 </a>
             @else

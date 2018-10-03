@@ -29,6 +29,7 @@
 @yield('jumbotron')
 <div id="app">
 
+    {{--<stripe-form></stripe-form>--}}
     <main class="py-4">
         @if(session('message'))
             <div class="row justify-content-center">
@@ -47,3 +48,9 @@
 </div>
 </body>
 </html>
+<script>
+    import StripeForm from "../../js/components/StripeForm";
+    export default {
+        components: {StripeForm}
+    }
+</script>

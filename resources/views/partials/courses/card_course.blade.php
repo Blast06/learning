@@ -16,6 +16,6 @@
         <p class="card-text">
             {{ str_limit($course->description,100) }}
         </p>
-        <a href="#" class="btn btn-course btn-lock">Mas informacion</a>
+        <a href="{{ route('courses.detail', $course->id) }}" class="btn btn-course btn-lock">Mas informacion</a>
     </div>
 </div>

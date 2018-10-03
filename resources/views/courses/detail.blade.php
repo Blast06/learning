@@ -8,6 +8,12 @@
 @section('content')
     <div class="pl-5 pr-5">
         <div class="row justify-content-center">
+            @include('partials.courses.goals', ['goals' => $course->goals])
+            @include('partials.courses.requirements', ['requirements' => $course->requirements])
+            {{--en este caso, no pasamos ningun parametro al partials description porque accedemos a una propiedad--}}
+            {{--directa del curso--}}
+            @include('partials.courses.description')
+            @include('partials.courses.related')
         </div>
     </div>
 
