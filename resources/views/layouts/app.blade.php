@@ -22,14 +22,13 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
           integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    @stack('styles')
 </head>
 <body>
 
 @include('partials.navigation')
 @yield('jumbotron')
 <div id="app">
-
-    {{--<stripe-form></stripe-form>--}}
     <main class="py-4">
         @if(session('message'))
             <div class="row justify-content-center">
@@ -46,11 +45,7 @@
         @yield('content')
     </main>
 </div>
+<script src="{{ asset('js/app.js') }}"></script>
+
 </body>
 </html>
-<script>
-    import StripeForm from "../../js/components/StripeForm";
-    export default {
-        components: {StripeForm}
-    }
-</script>
