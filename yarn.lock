@@ -5910,6 +5910,10 @@ vue-resource@^1.5.1:
   dependencies:
     got "^8.0.3"
 
+vue-stripe-checkout@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/vue-stripe-checkout/-/vue-stripe-checkout-1.0.8.tgz#44cd50ec912e3dd2d7a143c1186d5e637129e17c"
+
 vue-stripe@^0.1.52:
   version "0.1.52"
   resolved "https://registry.yarnpkg.com/vue-stripe/-/vue-stripe-0.1.52.tgz#e401d20a674ad258d503102559ddd095e11f249d"

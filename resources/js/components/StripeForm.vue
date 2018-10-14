@@ -1,5 +1,6 @@
 <template>
     <stripe-checkout
+            src="https://checkout.stripe.com/checkout.js"
             button="Suscribirme"
             buttonClass="btn btn-course"
             :stripe-key="stripe_key"
@@ -9,13 +10,12 @@
 </template>
 
 <script>
-    import {StripeCheckout} from 'vue-stripe';
-
+    import { StripeCheckout } from 'vue-stripe';
     export default {
         components: {
             StripeCheckout
         },
-        // name: "stripe-form",
+        name: "stripe-form",
         props: {
             stripe_key: '',
             name: '',
@@ -23,7 +23,7 @@
             description: ''
         },
         computed: {
-            product() {
+            product () {
                 return {
                     name: this.name,
                     amount: parseFloat(this.amount),
@@ -32,4 +32,6 @@
             }
         }
     }
+
 </script>
+

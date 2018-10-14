@@ -14,8 +14,14 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+/* stripe config */
+
+
+
+
 import StripeForm from './components/StripeForm';
-Vue.component('stripe-form', StripeForm);
+Vue.component('stripe-form', require("./components/StripeForm"));
+// Vue.component('stripe-form', StripeForm);
 const app = new Vue({
     el: '#app'
 });
